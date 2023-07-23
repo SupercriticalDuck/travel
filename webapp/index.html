@@ -21,6 +21,7 @@
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -33,14 +34,47 @@
         <script src="data/BucharestConstanta_3.js"></script>
         <script src="data/AthensKalambaka_4.js"></script>
         <script src="data/DiakoptoKalavaryta_5.js"></script>
-        <script src="data/CasertaBari_6.js"></script>
-        <script src="data/NapoliCaserta_7.js"></script>
-        <script src="data/BolognaNapoli_8.js"></script>
-        <script src="data/GrazBologna_9.js"></script>
+        <script src="data/ViennaSinaia_6.js"></script>
+        <script src="data/ViennaKosice_7.js"></script>
+        <script src="data/BratislavaSVienna_8.js"></script>
+        <script src="data/GrazUlm_9.js"></script>
+        <script src="data/OsloTrondheim_10.js"></script>
+        <script src="data/HamburgGoettingen_11.js"></script>
+        <script src="data/TrondheimBodo_12.js"></script>
+        <script src="data/NurembergFrankfurt_13.js"></script>
+        <script src="data/ParisSanSebastian_14.js"></script>
+        <script src="data/ZurichParis_15.js"></script>
+        <script src="data/ViennaZurich_16.js"></script>
+        <script src="data/ParisFrankfurt_17.js"></script>
+        <script src="data/ParisArgles_18.js"></script>
+        <script src="data/ZurichChiasso_19.js"></script>
+        <script src="data/ZurichGeneva_20.js"></script>
+        <script src="data/ZermatVisp_21.js"></script>
+        <script src="data/Davos_22.js"></script>
+        <script src="data/BurggDavos_23.js"></script>
+        <script src="data/FilisurSion_24.js"></script>
+        <script src="data/SionLausane_25.js"></script>
+        <script src="data/YVGeneva_26.js"></script>
+        <script src="data/BernYV_27.js"></script>
+        <script src="data/HamburgFredericia_28.js"></script>
+        <script src="data/LillehedenHamburgRev1_29.js"></script>
+        <script src="data/LillehedenHamburgRev2_30.js"></script>
+        <script src="data/OsloBergen_31.js"></script>
+        <script src="data/KristiansandOslo_32.js"></script>
+        <script src="data/FredericiaLilleheden_33.js"></script>
+        <script src="data/HamburgFredericia_34.js"></script>
+        <script src="data/ErlangenHamburg_35.js"></script>
+        <script src="data/ErlangenMunich_36.js"></script>
+        <script src="data/WienBrno_37.js"></script>
+        <script src="data/GrazWien_38.js"></script>
+        <script src="data/CasertaBari_39.js"></script>
+        <script src="data/NapoliCaserta_40.js"></script>
+        <script src="data/BolognaNapoli_41.js"></script>
+        <script src="data/GrazBologna_42.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[28.572941706869454,5.782524441311997],[51.47496402785095,51.33360099438369]]);
+        }).fitBounds([[29.552486142184566,-39.68321444666425],[65.98511419485885,46.814983065408384]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -73,26 +107,32 @@
             return {
                 pane: 'pane_BudapestGraz_1',
                 opacity: 1,
-                color: 'rgba(213,180,60,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BudapestGraz_1_1() {
+            return {
+                pane: 'pane_BudapestGraz_1',
                 interactive: true,
             }
         }
         map.createPane('pane_BudapestGraz_1');
         map.getPane('pane_BudapestGraz_1').style.zIndex = 401;
         map.getPane('pane_BudapestGraz_1').style['mix-blend-mode'] = 'normal';
-        var layer_BudapestGraz_1 = new L.geoJson(json_BudapestGraz_1, {
+        var layer_BudapestGraz_1 = new L.geoJson.multiStyle(json_BudapestGraz_1, {
             attribution: '',
             interactive: true,
             dataVar: 'json_BudapestGraz_1',
             layerName: 'layer_BudapestGraz_1',
             pane: 'pane_BudapestGraz_1',
             onEachFeature: pop_BudapestGraz_1,
-            style: style_BudapestGraz_1_0,
+            styles: [style_BudapestGraz_1_0,style_BudapestGraz_1_1,]
         });
         bounds_group.addLayer(layer_BudapestGraz_1);
         map.addLayer(layer_BudapestGraz_1);
@@ -109,26 +149,32 @@
             return {
                 pane: 'pane_BucharestBudapest_2',
                 opacity: 1,
-                color: 'rgba(164,113,88,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BucharestBudapest_2_1() {
+            return {
+                pane: 'pane_BucharestBudapest_2',
                 interactive: true,
             }
         }
         map.createPane('pane_BucharestBudapest_2');
         map.getPane('pane_BucharestBudapest_2').style.zIndex = 402;
         map.getPane('pane_BucharestBudapest_2').style['mix-blend-mode'] = 'normal';
-        var layer_BucharestBudapest_2 = new L.geoJson(json_BucharestBudapest_2, {
+        var layer_BucharestBudapest_2 = new L.geoJson.multiStyle(json_BucharestBudapest_2, {
             attribution: '',
             interactive: true,
             dataVar: 'json_BucharestBudapest_2',
             layerName: 'layer_BucharestBudapest_2',
             pane: 'pane_BucharestBudapest_2',
             onEachFeature: pop_BucharestBudapest_2,
-            style: style_BucharestBudapest_2_0,
+            styles: [style_BucharestBudapest_2_0,style_BucharestBudapest_2_1,]
         });
         bounds_group.addLayer(layer_BucharestBudapest_2);
         map.addLayer(layer_BucharestBudapest_2);
@@ -145,26 +191,32 @@
             return {
                 pane: 'pane_BucharestConstanta_3',
                 opacity: 1,
-                color: 'rgba(133,182,111,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BucharestConstanta_3_1() {
+            return {
+                pane: 'pane_BucharestConstanta_3',
                 interactive: true,
             }
         }
         map.createPane('pane_BucharestConstanta_3');
         map.getPane('pane_BucharestConstanta_3').style.zIndex = 403;
         map.getPane('pane_BucharestConstanta_3').style['mix-blend-mode'] = 'normal';
-        var layer_BucharestConstanta_3 = new L.geoJson(json_BucharestConstanta_3, {
+        var layer_BucharestConstanta_3 = new L.geoJson.multiStyle(json_BucharestConstanta_3, {
             attribution: '',
             interactive: true,
             dataVar: 'json_BucharestConstanta_3',
             layerName: 'layer_BucharestConstanta_3',
             pane: 'pane_BucharestConstanta_3',
             onEachFeature: pop_BucharestConstanta_3,
-            style: style_BucharestConstanta_3_0,
+            styles: [style_BucharestConstanta_3_0,style_BucharestConstanta_3_1,]
         });
         bounds_group.addLayer(layer_BucharestConstanta_3);
         map.addLayer(layer_BucharestConstanta_3);
@@ -181,26 +233,32 @@
             return {
                 pane: 'pane_AthensKalambaka_4',
                 opacity: 1,
-                color: 'rgba(125,139,143,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_AthensKalambaka_4_1() {
+            return {
+                pane: 'pane_AthensKalambaka_4',
                 interactive: true,
             }
         }
         map.createPane('pane_AthensKalambaka_4');
         map.getPane('pane_AthensKalambaka_4').style.zIndex = 404;
         map.getPane('pane_AthensKalambaka_4').style['mix-blend-mode'] = 'normal';
-        var layer_AthensKalambaka_4 = new L.geoJson(json_AthensKalambaka_4, {
+        var layer_AthensKalambaka_4 = new L.geoJson.multiStyle(json_AthensKalambaka_4, {
             attribution: '',
             interactive: true,
             dataVar: 'json_AthensKalambaka_4',
             layerName: 'layer_AthensKalambaka_4',
             pane: 'pane_AthensKalambaka_4',
             onEachFeature: pop_AthensKalambaka_4,
-            style: style_AthensKalambaka_4_0,
+            styles: [style_AthensKalambaka_4_0,style_AthensKalambaka_4_1,]
         });
         bounds_group.addLayer(layer_AthensKalambaka_4);
         map.addLayer(layer_AthensKalambaka_4);
@@ -217,30 +275,36 @@
             return {
                 pane: 'pane_DiakoptoKalavaryta_5',
                 opacity: 1,
-                color: 'rgba(145,82,45,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_DiakoptoKalavaryta_5_1() {
+            return {
+                pane: 'pane_DiakoptoKalavaryta_5',
                 interactive: true,
             }
         }
         map.createPane('pane_DiakoptoKalavaryta_5');
         map.getPane('pane_DiakoptoKalavaryta_5').style.zIndex = 405;
         map.getPane('pane_DiakoptoKalavaryta_5').style['mix-blend-mode'] = 'normal';
-        var layer_DiakoptoKalavaryta_5 = new L.geoJson(json_DiakoptoKalavaryta_5, {
+        var layer_DiakoptoKalavaryta_5 = new L.geoJson.multiStyle(json_DiakoptoKalavaryta_5, {
             attribution: '',
             interactive: true,
             dataVar: 'json_DiakoptoKalavaryta_5',
             layerName: 'layer_DiakoptoKalavaryta_5',
             pane: 'pane_DiakoptoKalavaryta_5',
             onEachFeature: pop_DiakoptoKalavaryta_5,
-            style: style_DiakoptoKalavaryta_5_0,
+            styles: [style_DiakoptoKalavaryta_5_0,style_DiakoptoKalavaryta_5_1,]
         });
         bounds_group.addLayer(layer_DiakoptoKalavaryta_5);
         map.addLayer(layer_DiakoptoKalavaryta_5);
-        function pop_CasertaBari_6(feature, layer) {
+        function pop_ViennaSinaia_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -249,34 +313,40 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_CasertaBari_6_0() {
+        function style_ViennaSinaia_6_0() {
             return {
-                pane: 'pane_CasertaBari_6',
+                pane: 'pane_ViennaSinaia_6',
                 opacity: 1,
-                color: 'rgba(190,178,151,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_CasertaBari_6');
-        map.getPane('pane_CasertaBari_6').style.zIndex = 406;
-        map.getPane('pane_CasertaBari_6').style['mix-blend-mode'] = 'normal';
-        var layer_CasertaBari_6 = new L.geoJson(json_CasertaBari_6, {
+        function style_ViennaSinaia_6_1() {
+            return {
+                pane: 'pane_ViennaSinaia_6',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ViennaSinaia_6');
+        map.getPane('pane_ViennaSinaia_6').style.zIndex = 406;
+        map.getPane('pane_ViennaSinaia_6').style['mix-blend-mode'] = 'normal';
+        var layer_ViennaSinaia_6 = new L.geoJson.multiStyle(json_ViennaSinaia_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_CasertaBari_6',
-            layerName: 'layer_CasertaBari_6',
-            pane: 'pane_CasertaBari_6',
-            onEachFeature: pop_CasertaBari_6,
-            style: style_CasertaBari_6_0,
+            dataVar: 'json_ViennaSinaia_6',
+            layerName: 'layer_ViennaSinaia_6',
+            pane: 'pane_ViennaSinaia_6',
+            onEachFeature: pop_ViennaSinaia_6,
+            styles: [style_ViennaSinaia_6_0,style_ViennaSinaia_6_1,]
         });
-        bounds_group.addLayer(layer_CasertaBari_6);
-        map.addLayer(layer_CasertaBari_6);
-        function pop_NapoliCaserta_7(feature, layer) {
+        bounds_group.addLayer(layer_ViennaSinaia_6);
+        map.addLayer(layer_ViennaSinaia_6);
+        function pop_ViennaKosice_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -285,34 +355,40 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_NapoliCaserta_7_0() {
+        function style_ViennaKosice_7_0() {
             return {
-                pane: 'pane_NapoliCaserta_7',
+                pane: 'pane_ViennaKosice_7',
                 opacity: 1,
-                color: 'rgba(196,60,57,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_NapoliCaserta_7');
-        map.getPane('pane_NapoliCaserta_7').style.zIndex = 407;
-        map.getPane('pane_NapoliCaserta_7').style['mix-blend-mode'] = 'normal';
-        var layer_NapoliCaserta_7 = new L.geoJson(json_NapoliCaserta_7, {
+        function style_ViennaKosice_7_1() {
+            return {
+                pane: 'pane_ViennaKosice_7',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ViennaKosice_7');
+        map.getPane('pane_ViennaKosice_7').style.zIndex = 407;
+        map.getPane('pane_ViennaKosice_7').style['mix-blend-mode'] = 'normal';
+        var layer_ViennaKosice_7 = new L.geoJson.multiStyle(json_ViennaKosice_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_NapoliCaserta_7',
-            layerName: 'layer_NapoliCaserta_7',
-            pane: 'pane_NapoliCaserta_7',
-            onEachFeature: pop_NapoliCaserta_7,
-            style: style_NapoliCaserta_7_0,
+            dataVar: 'json_ViennaKosice_7',
+            layerName: 'layer_ViennaKosice_7',
+            pane: 'pane_ViennaKosice_7',
+            onEachFeature: pop_ViennaKosice_7,
+            styles: [style_ViennaKosice_7_0,style_ViennaKosice_7_1,]
         });
-        bounds_group.addLayer(layer_NapoliCaserta_7);
-        map.addLayer(layer_NapoliCaserta_7);
-        function pop_BolognaNapoli_8(feature, layer) {
+        bounds_group.addLayer(layer_ViennaKosice_7);
+        map.addLayer(layer_ViennaKosice_7);
+        function pop_BratislavaSVienna_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -321,34 +397,40 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_BolognaNapoli_8_0() {
+        function style_BratislavaSVienna_8_0() {
             return {
-                pane: 'pane_BolognaNapoli_8',
+                pane: 'pane_BratislavaSVienna_8',
                 opacity: 1,
-                color: 'rgba(229,182,54,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_BolognaNapoli_8');
-        map.getPane('pane_BolognaNapoli_8').style.zIndex = 408;
-        map.getPane('pane_BolognaNapoli_8').style['mix-blend-mode'] = 'normal';
-        var layer_BolognaNapoli_8 = new L.geoJson(json_BolognaNapoli_8, {
+        function style_BratislavaSVienna_8_1() {
+            return {
+                pane: 'pane_BratislavaSVienna_8',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BratislavaSVienna_8');
+        map.getPane('pane_BratislavaSVienna_8').style.zIndex = 408;
+        map.getPane('pane_BratislavaSVienna_8').style['mix-blend-mode'] = 'normal';
+        var layer_BratislavaSVienna_8 = new L.geoJson.multiStyle(json_BratislavaSVienna_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_BolognaNapoli_8',
-            layerName: 'layer_BolognaNapoli_8',
-            pane: 'pane_BolognaNapoli_8',
-            onEachFeature: pop_BolognaNapoli_8,
-            style: style_BolognaNapoli_8_0,
+            dataVar: 'json_BratislavaSVienna_8',
+            layerName: 'layer_BratislavaSVienna_8',
+            pane: 'pane_BratislavaSVienna_8',
+            onEachFeature: pop_BratislavaSVienna_8,
+            styles: [style_BratislavaSVienna_8_0,style_BratislavaSVienna_8_1,]
         });
-        bounds_group.addLayer(layer_BolognaNapoli_8);
-        map.addLayer(layer_BolognaNapoli_8);
-        function pop_GrazBologna_9(feature, layer) {
+        bounds_group.addLayer(layer_BratislavaSVienna_8);
+        map.addLayer(layer_BratislavaSVienna_8);
+        function pop_GrazUlm_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
@@ -357,33 +439,1425 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_GrazBologna_9_0() {
+        function style_GrazUlm_9_0() {
             return {
-                pane: 'pane_GrazBologna_9',
+                pane: 'pane_GrazUlm_9',
                 opacity: 1,
-                color: 'rgba(225,89,137,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
                 fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_GrazBologna_9');
-        map.getPane('pane_GrazBologna_9').style.zIndex = 409;
-        map.getPane('pane_GrazBologna_9').style['mix-blend-mode'] = 'normal';
-        var layer_GrazBologna_9 = new L.geoJson(json_GrazBologna_9, {
+        function style_GrazUlm_9_1() {
+            return {
+                pane: 'pane_GrazUlm_9',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GrazUlm_9');
+        map.getPane('pane_GrazUlm_9').style.zIndex = 409;
+        map.getPane('pane_GrazUlm_9').style['mix-blend-mode'] = 'normal';
+        var layer_GrazUlm_9 = new L.geoJson.multiStyle(json_GrazUlm_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_GrazBologna_9',
-            layerName: 'layer_GrazBologna_9',
-            pane: 'pane_GrazBologna_9',
-            onEachFeature: pop_GrazBologna_9,
-            style: style_GrazBologna_9_0,
+            dataVar: 'json_GrazUlm_9',
+            layerName: 'layer_GrazUlm_9',
+            pane: 'pane_GrazUlm_9',
+            onEachFeature: pop_GrazUlm_9,
+            styles: [style_GrazUlm_9_0,style_GrazUlm_9_1,]
         });
-        bounds_group.addLayer(layer_GrazBologna_9);
-        map.addLayer(layer_GrazBologna_9);
+        bounds_group.addLayer(layer_GrazUlm_9);
+        map.addLayer(layer_GrazUlm_9);
+        function pop_OsloTrondheim_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_OsloTrondheim_10_0() {
+            return {
+                pane: 'pane_OsloTrondheim_10',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_OsloTrondheim_10_1() {
+            return {
+                pane: 'pane_OsloTrondheim_10',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_OsloTrondheim_10');
+        map.getPane('pane_OsloTrondheim_10').style.zIndex = 410;
+        map.getPane('pane_OsloTrondheim_10').style['mix-blend-mode'] = 'normal';
+        var layer_OsloTrondheim_10 = new L.geoJson.multiStyle(json_OsloTrondheim_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_OsloTrondheim_10',
+            layerName: 'layer_OsloTrondheim_10',
+            pane: 'pane_OsloTrondheim_10',
+            onEachFeature: pop_OsloTrondheim_10,
+            styles: [style_OsloTrondheim_10_0,style_OsloTrondheim_10_1,]
+        });
+        bounds_group.addLayer(layer_OsloTrondheim_10);
+        map.addLayer(layer_OsloTrondheim_10);
+        function pop_HamburgGoettingen_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HamburgGoettingen_11_0() {
+            return {
+                pane: 'pane_HamburgGoettingen_11',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_HamburgGoettingen_11_1() {
+            return {
+                pane: 'pane_HamburgGoettingen_11',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HamburgGoettingen_11');
+        map.getPane('pane_HamburgGoettingen_11').style.zIndex = 411;
+        map.getPane('pane_HamburgGoettingen_11').style['mix-blend-mode'] = 'normal';
+        var layer_HamburgGoettingen_11 = new L.geoJson.multiStyle(json_HamburgGoettingen_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HamburgGoettingen_11',
+            layerName: 'layer_HamburgGoettingen_11',
+            pane: 'pane_HamburgGoettingen_11',
+            onEachFeature: pop_HamburgGoettingen_11,
+            styles: [style_HamburgGoettingen_11_0,style_HamburgGoettingen_11_1,]
+        });
+        bounds_group.addLayer(layer_HamburgGoettingen_11);
+        map.addLayer(layer_HamburgGoettingen_11);
+        function pop_TrondheimBodo_12(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TrondheimBodo_12_0() {
+            return {
+                pane: 'pane_TrondheimBodo_12',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_TrondheimBodo_12_1() {
+            return {
+                pane: 'pane_TrondheimBodo_12',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_TrondheimBodo_12');
+        map.getPane('pane_TrondheimBodo_12').style.zIndex = 412;
+        map.getPane('pane_TrondheimBodo_12').style['mix-blend-mode'] = 'normal';
+        var layer_TrondheimBodo_12 = new L.geoJson.multiStyle(json_TrondheimBodo_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TrondheimBodo_12',
+            layerName: 'layer_TrondheimBodo_12',
+            pane: 'pane_TrondheimBodo_12',
+            onEachFeature: pop_TrondheimBodo_12,
+            styles: [style_TrondheimBodo_12_0,style_TrondheimBodo_12_1,]
+        });
+        bounds_group.addLayer(layer_TrondheimBodo_12);
+        map.addLayer(layer_TrondheimBodo_12);
+        function pop_NurembergFrankfurt_13(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_NurembergFrankfurt_13_0() {
+            return {
+                pane: 'pane_NurembergFrankfurt_13',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_NurembergFrankfurt_13_1() {
+            return {
+                pane: 'pane_NurembergFrankfurt_13',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_NurembergFrankfurt_13');
+        map.getPane('pane_NurembergFrankfurt_13').style.zIndex = 413;
+        map.getPane('pane_NurembergFrankfurt_13').style['mix-blend-mode'] = 'normal';
+        var layer_NurembergFrankfurt_13 = new L.geoJson.multiStyle(json_NurembergFrankfurt_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_NurembergFrankfurt_13',
+            layerName: 'layer_NurembergFrankfurt_13',
+            pane: 'pane_NurembergFrankfurt_13',
+            onEachFeature: pop_NurembergFrankfurt_13,
+            styles: [style_NurembergFrankfurt_13_0,style_NurembergFrankfurt_13_1,]
+        });
+        bounds_group.addLayer(layer_NurembergFrankfurt_13);
+        map.addLayer(layer_NurembergFrankfurt_13);
+        function pop_ParisSanSebastian_14(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ParisSanSebastian_14_0() {
+            return {
+                pane: 'pane_ParisSanSebastian_14',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ParisSanSebastian_14_1() {
+            return {
+                pane: 'pane_ParisSanSebastian_14',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ParisSanSebastian_14');
+        map.getPane('pane_ParisSanSebastian_14').style.zIndex = 414;
+        map.getPane('pane_ParisSanSebastian_14').style['mix-blend-mode'] = 'normal';
+        var layer_ParisSanSebastian_14 = new L.geoJson.multiStyle(json_ParisSanSebastian_14, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ParisSanSebastian_14',
+            layerName: 'layer_ParisSanSebastian_14',
+            pane: 'pane_ParisSanSebastian_14',
+            onEachFeature: pop_ParisSanSebastian_14,
+            styles: [style_ParisSanSebastian_14_0,style_ParisSanSebastian_14_1,]
+        });
+        bounds_group.addLayer(layer_ParisSanSebastian_14);
+        map.addLayer(layer_ParisSanSebastian_14);
+        function pop_ZurichParis_15(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZurichParis_15_0() {
+            return {
+                pane: 'pane_ZurichParis_15',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ZurichParis_15_1() {
+            return {
+                pane: 'pane_ZurichParis_15',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZurichParis_15');
+        map.getPane('pane_ZurichParis_15').style.zIndex = 415;
+        map.getPane('pane_ZurichParis_15').style['mix-blend-mode'] = 'normal';
+        var layer_ZurichParis_15 = new L.geoJson.multiStyle(json_ZurichParis_15, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZurichParis_15',
+            layerName: 'layer_ZurichParis_15',
+            pane: 'pane_ZurichParis_15',
+            onEachFeature: pop_ZurichParis_15,
+            styles: [style_ZurichParis_15_0,style_ZurichParis_15_1,]
+        });
+        bounds_group.addLayer(layer_ZurichParis_15);
+        map.addLayer(layer_ZurichParis_15);
+        function pop_ViennaZurich_16(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ViennaZurich_16_0() {
+            return {
+                pane: 'pane_ViennaZurich_16',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ViennaZurich_16_1() {
+            return {
+                pane: 'pane_ViennaZurich_16',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ViennaZurich_16');
+        map.getPane('pane_ViennaZurich_16').style.zIndex = 416;
+        map.getPane('pane_ViennaZurich_16').style['mix-blend-mode'] = 'normal';
+        var layer_ViennaZurich_16 = new L.geoJson.multiStyle(json_ViennaZurich_16, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ViennaZurich_16',
+            layerName: 'layer_ViennaZurich_16',
+            pane: 'pane_ViennaZurich_16',
+            onEachFeature: pop_ViennaZurich_16,
+            styles: [style_ViennaZurich_16_0,style_ViennaZurich_16_1,]
+        });
+        bounds_group.addLayer(layer_ViennaZurich_16);
+        map.addLayer(layer_ViennaZurich_16);
+        function pop_ParisFrankfurt_17(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ParisFrankfurt_17_0() {
+            return {
+                pane: 'pane_ParisFrankfurt_17',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ParisFrankfurt_17_1() {
+            return {
+                pane: 'pane_ParisFrankfurt_17',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ParisFrankfurt_17');
+        map.getPane('pane_ParisFrankfurt_17').style.zIndex = 417;
+        map.getPane('pane_ParisFrankfurt_17').style['mix-blend-mode'] = 'normal';
+        var layer_ParisFrankfurt_17 = new L.geoJson.multiStyle(json_ParisFrankfurt_17, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ParisFrankfurt_17',
+            layerName: 'layer_ParisFrankfurt_17',
+            pane: 'pane_ParisFrankfurt_17',
+            onEachFeature: pop_ParisFrankfurt_17,
+            styles: [style_ParisFrankfurt_17_0,style_ParisFrankfurt_17_1,]
+        });
+        bounds_group.addLayer(layer_ParisFrankfurt_17);
+        map.addLayer(layer_ParisFrankfurt_17);
+        function pop_ParisArgles_18(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ParisArgles_18_0() {
+            return {
+                pane: 'pane_ParisArgles_18',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ParisArgles_18_1() {
+            return {
+                pane: 'pane_ParisArgles_18',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ParisArgles_18');
+        map.getPane('pane_ParisArgles_18').style.zIndex = 418;
+        map.getPane('pane_ParisArgles_18').style['mix-blend-mode'] = 'normal';
+        var layer_ParisArgles_18 = new L.geoJson.multiStyle(json_ParisArgles_18, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ParisArgles_18',
+            layerName: 'layer_ParisArgles_18',
+            pane: 'pane_ParisArgles_18',
+            onEachFeature: pop_ParisArgles_18,
+            styles: [style_ParisArgles_18_0,style_ParisArgles_18_1,]
+        });
+        bounds_group.addLayer(layer_ParisArgles_18);
+        map.addLayer(layer_ParisArgles_18);
+        function pop_ZurichChiasso_19(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZurichChiasso_19_0() {
+            return {
+                pane: 'pane_ZurichChiasso_19',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ZurichChiasso_19_1() {
+            return {
+                pane: 'pane_ZurichChiasso_19',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZurichChiasso_19');
+        map.getPane('pane_ZurichChiasso_19').style.zIndex = 419;
+        map.getPane('pane_ZurichChiasso_19').style['mix-blend-mode'] = 'normal';
+        var layer_ZurichChiasso_19 = new L.geoJson.multiStyle(json_ZurichChiasso_19, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZurichChiasso_19',
+            layerName: 'layer_ZurichChiasso_19',
+            pane: 'pane_ZurichChiasso_19',
+            onEachFeature: pop_ZurichChiasso_19,
+            styles: [style_ZurichChiasso_19_0,style_ZurichChiasso_19_1,]
+        });
+        bounds_group.addLayer(layer_ZurichChiasso_19);
+        map.addLayer(layer_ZurichChiasso_19);
+        function pop_ZurichGeneva_20(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZurichGeneva_20_0() {
+            return {
+                pane: 'pane_ZurichGeneva_20',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ZurichGeneva_20_1() {
+            return {
+                pane: 'pane_ZurichGeneva_20',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZurichGeneva_20');
+        map.getPane('pane_ZurichGeneva_20').style.zIndex = 420;
+        map.getPane('pane_ZurichGeneva_20').style['mix-blend-mode'] = 'normal';
+        var layer_ZurichGeneva_20 = new L.geoJson.multiStyle(json_ZurichGeneva_20, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZurichGeneva_20',
+            layerName: 'layer_ZurichGeneva_20',
+            pane: 'pane_ZurichGeneva_20',
+            onEachFeature: pop_ZurichGeneva_20,
+            styles: [style_ZurichGeneva_20_0,style_ZurichGeneva_20_1,]
+        });
+        bounds_group.addLayer(layer_ZurichGeneva_20);
+        map.addLayer(layer_ZurichGeneva_20);
+        function pop_ZermatVisp_21(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZermatVisp_21_0() {
+            return {
+                pane: 'pane_ZermatVisp_21',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ZermatVisp_21_1() {
+            return {
+                pane: 'pane_ZermatVisp_21',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZermatVisp_21');
+        map.getPane('pane_ZermatVisp_21').style.zIndex = 421;
+        map.getPane('pane_ZermatVisp_21').style['mix-blend-mode'] = 'normal';
+        var layer_ZermatVisp_21 = new L.geoJson.multiStyle(json_ZermatVisp_21, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZermatVisp_21',
+            layerName: 'layer_ZermatVisp_21',
+            pane: 'pane_ZermatVisp_21',
+            onEachFeature: pop_ZermatVisp_21,
+            styles: [style_ZermatVisp_21_0,style_ZermatVisp_21_1,]
+        });
+        bounds_group.addLayer(layer_ZermatVisp_21);
+        map.addLayer(layer_ZermatVisp_21);
+        function pop_Davos_22(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Davos_22_0() {
+            return {
+                pane: 'pane_Davos_22',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_Davos_22_1() {
+            return {
+                pane: 'pane_Davos_22',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Davos_22');
+        map.getPane('pane_Davos_22').style.zIndex = 422;
+        map.getPane('pane_Davos_22').style['mix-blend-mode'] = 'normal';
+        var layer_Davos_22 = new L.geoJson.multiStyle(json_Davos_22, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Davos_22',
+            layerName: 'layer_Davos_22',
+            pane: 'pane_Davos_22',
+            onEachFeature: pop_Davos_22,
+            styles: [style_Davos_22_0,style_Davos_22_1,]
+        });
+        bounds_group.addLayer(layer_Davos_22);
+        map.addLayer(layer_Davos_22);
+        function pop_BurggDavos_23(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BurggDavos_23_0() {
+            return {
+                pane: 'pane_BurggDavos_23',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BurggDavos_23_1() {
+            return {
+                pane: 'pane_BurggDavos_23',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BurggDavos_23');
+        map.getPane('pane_BurggDavos_23').style.zIndex = 423;
+        map.getPane('pane_BurggDavos_23').style['mix-blend-mode'] = 'normal';
+        var layer_BurggDavos_23 = new L.geoJson.multiStyle(json_BurggDavos_23, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BurggDavos_23',
+            layerName: 'layer_BurggDavos_23',
+            pane: 'pane_BurggDavos_23',
+            onEachFeature: pop_BurggDavos_23,
+            styles: [style_BurggDavos_23_0,style_BurggDavos_23_1,]
+        });
+        bounds_group.addLayer(layer_BurggDavos_23);
+        map.addLayer(layer_BurggDavos_23);
+        function pop_FilisurSion_24(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FilisurSion_24_0() {
+            return {
+                pane: 'pane_FilisurSion_24',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_FilisurSion_24_1() {
+            return {
+                pane: 'pane_FilisurSion_24',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FilisurSion_24');
+        map.getPane('pane_FilisurSion_24').style.zIndex = 424;
+        map.getPane('pane_FilisurSion_24').style['mix-blend-mode'] = 'normal';
+        var layer_FilisurSion_24 = new L.geoJson.multiStyle(json_FilisurSion_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FilisurSion_24',
+            layerName: 'layer_FilisurSion_24',
+            pane: 'pane_FilisurSion_24',
+            onEachFeature: pop_FilisurSion_24,
+            styles: [style_FilisurSion_24_0,style_FilisurSion_24_1,]
+        });
+        bounds_group.addLayer(layer_FilisurSion_24);
+        map.addLayer(layer_FilisurSion_24);
+        function pop_SionLausane_25(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SionLausane_25_0() {
+            return {
+                pane: 'pane_SionLausane_25',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_SionLausane_25_1() {
+            return {
+                pane: 'pane_SionLausane_25',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SionLausane_25');
+        map.getPane('pane_SionLausane_25').style.zIndex = 425;
+        map.getPane('pane_SionLausane_25').style['mix-blend-mode'] = 'normal';
+        var layer_SionLausane_25 = new L.geoJson.multiStyle(json_SionLausane_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SionLausane_25',
+            layerName: 'layer_SionLausane_25',
+            pane: 'pane_SionLausane_25',
+            onEachFeature: pop_SionLausane_25,
+            styles: [style_SionLausane_25_0,style_SionLausane_25_1,]
+        });
+        bounds_group.addLayer(layer_SionLausane_25);
+        map.addLayer(layer_SionLausane_25);
+        function pop_YVGeneva_26(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_YVGeneva_26_0() {
+            return {
+                pane: 'pane_YVGeneva_26',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_YVGeneva_26_1() {
+            return {
+                pane: 'pane_YVGeneva_26',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_YVGeneva_26');
+        map.getPane('pane_YVGeneva_26').style.zIndex = 426;
+        map.getPane('pane_YVGeneva_26').style['mix-blend-mode'] = 'normal';
+        var layer_YVGeneva_26 = new L.geoJson.multiStyle(json_YVGeneva_26, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_YVGeneva_26',
+            layerName: 'layer_YVGeneva_26',
+            pane: 'pane_YVGeneva_26',
+            onEachFeature: pop_YVGeneva_26,
+            styles: [style_YVGeneva_26_0,style_YVGeneva_26_1,]
+        });
+        bounds_group.addLayer(layer_YVGeneva_26);
+        map.addLayer(layer_YVGeneva_26);
+        function pop_BernYV_27(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BernYV_27_0() {
+            return {
+                pane: 'pane_BernYV_27',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BernYV_27_1() {
+            return {
+                pane: 'pane_BernYV_27',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BernYV_27');
+        map.getPane('pane_BernYV_27').style.zIndex = 427;
+        map.getPane('pane_BernYV_27').style['mix-blend-mode'] = 'normal';
+        var layer_BernYV_27 = new L.geoJson.multiStyle(json_BernYV_27, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BernYV_27',
+            layerName: 'layer_BernYV_27',
+            pane: 'pane_BernYV_27',
+            onEachFeature: pop_BernYV_27,
+            styles: [style_BernYV_27_0,style_BernYV_27_1,]
+        });
+        bounds_group.addLayer(layer_BernYV_27);
+        map.addLayer(layer_BernYV_27);
+        function pop_HamburgFredericia_28(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HamburgFredericia_28_0() {
+            return {
+                pane: 'pane_HamburgFredericia_28',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_HamburgFredericia_28_1() {
+            return {
+                pane: 'pane_HamburgFredericia_28',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HamburgFredericia_28');
+        map.getPane('pane_HamburgFredericia_28').style.zIndex = 428;
+        map.getPane('pane_HamburgFredericia_28').style['mix-blend-mode'] = 'normal';
+        var layer_HamburgFredericia_28 = new L.geoJson.multiStyle(json_HamburgFredericia_28, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HamburgFredericia_28',
+            layerName: 'layer_HamburgFredericia_28',
+            pane: 'pane_HamburgFredericia_28',
+            onEachFeature: pop_HamburgFredericia_28,
+            styles: [style_HamburgFredericia_28_0,style_HamburgFredericia_28_1,]
+        });
+        bounds_group.addLayer(layer_HamburgFredericia_28);
+        map.addLayer(layer_HamburgFredericia_28);
+        function pop_LillehedenHamburgRev1_29(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LillehedenHamburgRev1_29_0() {
+            return {
+                pane: 'pane_LillehedenHamburgRev1_29',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_LillehedenHamburgRev1_29_1() {
+            return {
+                pane: 'pane_LillehedenHamburgRev1_29',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LillehedenHamburgRev1_29');
+        map.getPane('pane_LillehedenHamburgRev1_29').style.zIndex = 429;
+        map.getPane('pane_LillehedenHamburgRev1_29').style['mix-blend-mode'] = 'normal';
+        var layer_LillehedenHamburgRev1_29 = new L.geoJson.multiStyle(json_LillehedenHamburgRev1_29, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LillehedenHamburgRev1_29',
+            layerName: 'layer_LillehedenHamburgRev1_29',
+            pane: 'pane_LillehedenHamburgRev1_29',
+            onEachFeature: pop_LillehedenHamburgRev1_29,
+            styles: [style_LillehedenHamburgRev1_29_0,style_LillehedenHamburgRev1_29_1,]
+        });
+        bounds_group.addLayer(layer_LillehedenHamburgRev1_29);
+        map.addLayer(layer_LillehedenHamburgRev1_29);
+        function pop_LillehedenHamburgRev2_30(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LillehedenHamburgRev2_30_0() {
+            return {
+                pane: 'pane_LillehedenHamburgRev2_30',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_LillehedenHamburgRev2_30_1() {
+            return {
+                pane: 'pane_LillehedenHamburgRev2_30',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LillehedenHamburgRev2_30');
+        map.getPane('pane_LillehedenHamburgRev2_30').style.zIndex = 430;
+        map.getPane('pane_LillehedenHamburgRev2_30').style['mix-blend-mode'] = 'normal';
+        var layer_LillehedenHamburgRev2_30 = new L.geoJson.multiStyle(json_LillehedenHamburgRev2_30, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LillehedenHamburgRev2_30',
+            layerName: 'layer_LillehedenHamburgRev2_30',
+            pane: 'pane_LillehedenHamburgRev2_30',
+            onEachFeature: pop_LillehedenHamburgRev2_30,
+            styles: [style_LillehedenHamburgRev2_30_0,style_LillehedenHamburgRev2_30_1,]
+        });
+        bounds_group.addLayer(layer_LillehedenHamburgRev2_30);
+        map.addLayer(layer_LillehedenHamburgRev2_30);
+        function pop_OsloBergen_31(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_OsloBergen_31_0() {
+            return {
+                pane: 'pane_OsloBergen_31',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_OsloBergen_31_1() {
+            return {
+                pane: 'pane_OsloBergen_31',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_OsloBergen_31');
+        map.getPane('pane_OsloBergen_31').style.zIndex = 431;
+        map.getPane('pane_OsloBergen_31').style['mix-blend-mode'] = 'normal';
+        var layer_OsloBergen_31 = new L.geoJson.multiStyle(json_OsloBergen_31, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_OsloBergen_31',
+            layerName: 'layer_OsloBergen_31',
+            pane: 'pane_OsloBergen_31',
+            onEachFeature: pop_OsloBergen_31,
+            styles: [style_OsloBergen_31_0,style_OsloBergen_31_1,]
+        });
+        bounds_group.addLayer(layer_OsloBergen_31);
+        map.addLayer(layer_OsloBergen_31);
+        function pop_KristiansandOslo_32(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_KristiansandOslo_32_0() {
+            return {
+                pane: 'pane_KristiansandOslo_32',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_KristiansandOslo_32_1() {
+            return {
+                pane: 'pane_KristiansandOslo_32',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KristiansandOslo_32');
+        map.getPane('pane_KristiansandOslo_32').style.zIndex = 432;
+        map.getPane('pane_KristiansandOslo_32').style['mix-blend-mode'] = 'normal';
+        var layer_KristiansandOslo_32 = new L.geoJson.multiStyle(json_KristiansandOslo_32, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KristiansandOslo_32',
+            layerName: 'layer_KristiansandOslo_32',
+            pane: 'pane_KristiansandOslo_32',
+            onEachFeature: pop_KristiansandOslo_32,
+            styles: [style_KristiansandOslo_32_0,style_KristiansandOslo_32_1,]
+        });
+        bounds_group.addLayer(layer_KristiansandOslo_32);
+        map.addLayer(layer_KristiansandOslo_32);
+        function pop_FredericiaLilleheden_33(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FredericiaLilleheden_33_0() {
+            return {
+                pane: 'pane_FredericiaLilleheden_33',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_FredericiaLilleheden_33_1() {
+            return {
+                pane: 'pane_FredericiaLilleheden_33',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FredericiaLilleheden_33');
+        map.getPane('pane_FredericiaLilleheden_33').style.zIndex = 433;
+        map.getPane('pane_FredericiaLilleheden_33').style['mix-blend-mode'] = 'normal';
+        var layer_FredericiaLilleheden_33 = new L.geoJson.multiStyle(json_FredericiaLilleheden_33, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FredericiaLilleheden_33',
+            layerName: 'layer_FredericiaLilleheden_33',
+            pane: 'pane_FredericiaLilleheden_33',
+            onEachFeature: pop_FredericiaLilleheden_33,
+            styles: [style_FredericiaLilleheden_33_0,style_FredericiaLilleheden_33_1,]
+        });
+        bounds_group.addLayer(layer_FredericiaLilleheden_33);
+        map.addLayer(layer_FredericiaLilleheden_33);
+        function pop_HamburgFredericia_34(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HamburgFredericia_34_0() {
+            return {
+                pane: 'pane_HamburgFredericia_34',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_HamburgFredericia_34_1() {
+            return {
+                pane: 'pane_HamburgFredericia_34',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_HamburgFredericia_34');
+        map.getPane('pane_HamburgFredericia_34').style.zIndex = 434;
+        map.getPane('pane_HamburgFredericia_34').style['mix-blend-mode'] = 'normal';
+        var layer_HamburgFredericia_34 = new L.geoJson.multiStyle(json_HamburgFredericia_34, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_HamburgFredericia_34',
+            layerName: 'layer_HamburgFredericia_34',
+            pane: 'pane_HamburgFredericia_34',
+            onEachFeature: pop_HamburgFredericia_34,
+            styles: [style_HamburgFredericia_34_0,style_HamburgFredericia_34_1,]
+        });
+        bounds_group.addLayer(layer_HamburgFredericia_34);
+        map.addLayer(layer_HamburgFredericia_34);
+        function pop_ErlangenHamburg_35(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ErlangenHamburg_35_0() {
+            return {
+                pane: 'pane_ErlangenHamburg_35',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ErlangenHamburg_35_1() {
+            return {
+                pane: 'pane_ErlangenHamburg_35',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ErlangenHamburg_35');
+        map.getPane('pane_ErlangenHamburg_35').style.zIndex = 435;
+        map.getPane('pane_ErlangenHamburg_35').style['mix-blend-mode'] = 'normal';
+        var layer_ErlangenHamburg_35 = new L.geoJson.multiStyle(json_ErlangenHamburg_35, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ErlangenHamburg_35',
+            layerName: 'layer_ErlangenHamburg_35',
+            pane: 'pane_ErlangenHamburg_35',
+            onEachFeature: pop_ErlangenHamburg_35,
+            styles: [style_ErlangenHamburg_35_0,style_ErlangenHamburg_35_1,]
+        });
+        bounds_group.addLayer(layer_ErlangenHamburg_35);
+        map.addLayer(layer_ErlangenHamburg_35);
+        function pop_ErlangenMunich_36(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ErlangenMunich_36_0() {
+            return {
+                pane: 'pane_ErlangenMunich_36',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_ErlangenMunich_36_1() {
+            return {
+                pane: 'pane_ErlangenMunich_36',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ErlangenMunich_36');
+        map.getPane('pane_ErlangenMunich_36').style.zIndex = 436;
+        map.getPane('pane_ErlangenMunich_36').style['mix-blend-mode'] = 'normal';
+        var layer_ErlangenMunich_36 = new L.geoJson.multiStyle(json_ErlangenMunich_36, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ErlangenMunich_36',
+            layerName: 'layer_ErlangenMunich_36',
+            pane: 'pane_ErlangenMunich_36',
+            onEachFeature: pop_ErlangenMunich_36,
+            styles: [style_ErlangenMunich_36_0,style_ErlangenMunich_36_1,]
+        });
+        bounds_group.addLayer(layer_ErlangenMunich_36);
+        map.addLayer(layer_ErlangenMunich_36);
+        function pop_WienBrno_37(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_WienBrno_37_0() {
+            return {
+                pane: 'pane_WienBrno_37',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_WienBrno_37_1() {
+            return {
+                pane: 'pane_WienBrno_37',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_WienBrno_37');
+        map.getPane('pane_WienBrno_37').style.zIndex = 437;
+        map.getPane('pane_WienBrno_37').style['mix-blend-mode'] = 'normal';
+        var layer_WienBrno_37 = new L.geoJson.multiStyle(json_WienBrno_37, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_WienBrno_37',
+            layerName: 'layer_WienBrno_37',
+            pane: 'pane_WienBrno_37',
+            onEachFeature: pop_WienBrno_37,
+            styles: [style_WienBrno_37_0,style_WienBrno_37_1,]
+        });
+        bounds_group.addLayer(layer_WienBrno_37);
+        map.addLayer(layer_WienBrno_37);
+        function pop_GrazWien_38(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GrazWien_38_0() {
+            return {
+                pane: 'pane_GrazWien_38',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_GrazWien_38_1() {
+            return {
+                pane: 'pane_GrazWien_38',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GrazWien_38');
+        map.getPane('pane_GrazWien_38').style.zIndex = 438;
+        map.getPane('pane_GrazWien_38').style['mix-blend-mode'] = 'normal';
+        var layer_GrazWien_38 = new L.geoJson.multiStyle(json_GrazWien_38, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GrazWien_38',
+            layerName: 'layer_GrazWien_38',
+            pane: 'pane_GrazWien_38',
+            onEachFeature: pop_GrazWien_38,
+            styles: [style_GrazWien_38_0,style_GrazWien_38_1,]
+        });
+        bounds_group.addLayer(layer_GrazWien_38);
+        map.addLayer(layer_GrazWien_38);
+        function pop_CasertaBari_39(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CasertaBari_39_0() {
+            return {
+                pane: 'pane_CasertaBari_39',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_CasertaBari_39_1() {
+            return {
+                pane: 'pane_CasertaBari_39',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_CasertaBari_39');
+        map.getPane('pane_CasertaBari_39').style.zIndex = 439;
+        map.getPane('pane_CasertaBari_39').style['mix-blend-mode'] = 'normal';
+        var layer_CasertaBari_39 = new L.geoJson.multiStyle(json_CasertaBari_39, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_CasertaBari_39',
+            layerName: 'layer_CasertaBari_39',
+            pane: 'pane_CasertaBari_39',
+            onEachFeature: pop_CasertaBari_39,
+            styles: [style_CasertaBari_39_0,style_CasertaBari_39_1,]
+        });
+        bounds_group.addLayer(layer_CasertaBari_39);
+        map.addLayer(layer_CasertaBari_39);
+        function pop_NapoliCaserta_40(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_NapoliCaserta_40_0() {
+            return {
+                pane: 'pane_NapoliCaserta_40',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_NapoliCaserta_40_1() {
+            return {
+                pane: 'pane_NapoliCaserta_40',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_NapoliCaserta_40');
+        map.getPane('pane_NapoliCaserta_40').style.zIndex = 440;
+        map.getPane('pane_NapoliCaserta_40').style['mix-blend-mode'] = 'normal';
+        var layer_NapoliCaserta_40 = new L.geoJson.multiStyle(json_NapoliCaserta_40, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_NapoliCaserta_40',
+            layerName: 'layer_NapoliCaserta_40',
+            pane: 'pane_NapoliCaserta_40',
+            onEachFeature: pop_NapoliCaserta_40,
+            styles: [style_NapoliCaserta_40_0,style_NapoliCaserta_40_1,]
+        });
+        bounds_group.addLayer(layer_NapoliCaserta_40);
+        map.addLayer(layer_NapoliCaserta_40);
+        function pop_BolognaNapoli_41(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BolognaNapoli_41_0() {
+            return {
+                pane: 'pane_BolognaNapoli_41',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_BolognaNapoli_41_1() {
+            return {
+                pane: 'pane_BolognaNapoli_41',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BolognaNapoli_41');
+        map.getPane('pane_BolognaNapoli_41').style.zIndex = 441;
+        map.getPane('pane_BolognaNapoli_41').style['mix-blend-mode'] = 'normal';
+        var layer_BolognaNapoli_41 = new L.geoJson.multiStyle(json_BolognaNapoli_41, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BolognaNapoli_41',
+            layerName: 'layer_BolognaNapoli_41',
+            pane: 'pane_BolognaNapoli_41',
+            onEachFeature: pop_BolognaNapoli_41,
+            styles: [style_BolognaNapoli_41_0,style_BolognaNapoli_41_1,]
+        });
+        bounds_group.addLayer(layer_BolognaNapoli_41);
+        map.addLayer(layer_BolognaNapoli_41);
+        function pop_GrazBologna_42(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GrazBologna_42_0() {
+            return {
+                pane: 'pane_GrazBologna_42',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_GrazBologna_42_1() {
+            return {
+                pane: 'pane_GrazBologna_42',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GrazBologna_42');
+        map.getPane('pane_GrazBologna_42').style.zIndex = 442;
+        map.getPane('pane_GrazBologna_42').style['mix-blend-mode'] = 'normal';
+        var layer_GrazBologna_42 = new L.geoJson.multiStyle(json_GrazBologna_42, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GrazBologna_42',
+            layerName: 'layer_GrazBologna_42',
+            pane: 'pane_GrazBologna_42',
+            onEachFeature: pop_GrazBologna_42,
+            styles: [style_GrazBologna_42_0,style_GrazBologna_42_1,]
+        });
+        bounds_group.addLayer(layer_GrazBologna_42);
+        map.addLayer(layer_GrazBologna_42);
         setBounds();
         </script>
     </body>

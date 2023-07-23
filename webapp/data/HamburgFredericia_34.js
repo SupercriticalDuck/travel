@@ -1,0 +1,1 @@
+var json_HamburgFredericia_34 = {"type":"FeatureCollection","name":"HamburgFredericia_34","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[]}
