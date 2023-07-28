@@ -1,4 +1,8 @@
 <a id="top"></a>
+# Trip reports
+This page may turn into a collection of trip reports in the future. There is also a map which is most probably more interesting under /webapp.
+Below is a guide created by [taylorhixson](https://github.com/taylorhixson) on how to create such a map. To collect the train routes, i used the railway navigation tool from [signal.eu.org](https://signal.eu.org/osm/).
+
 # Creating, hosting, and publishing Leaflet maps with qgis2web and GitHub
 ## Contents
 1. [Getting Started](#start)
