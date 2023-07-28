@@ -1,0 +1,9 @@
+<title>Map</title>
+
+<h1>Routes</h1>
+
+'<a href="https://signal.eu.org/osm" target="_blank">signal.eu.org</a> &middot;<a href="https://www.graphhopper.com">graphhopper</a> &middot;<a href="https://github.com/tomchadwin/qgis2web">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>'
+
+
+<p>Created with OSM, signal.eu.org/osm (Train Routing) and graphhopper (Bus routing).</p>
+<p>Hosted with github pages.</p>
